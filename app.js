@@ -165,10 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 6. GENERACIÓN DE PDF 1: BOLETA RESUMEN
     function generateSummaryPDF() {
+        // Construimos contenido y luego usamos flujo común
         buildInvoiceContent();
-        togglePrintView('boleta-resumen');
-        window.print();
-        restoreWebView();
+        printSection('boleta-resumen');
     }
 
     // Construye el contenido de la boleta de resumen
@@ -283,12 +282,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('detalle-total-final').innerHTML = 
             `TOTAL NETO GLOBAL: <strong>${granTotalNeto.toFixed(2)} kg</strong>`;
 
-        togglePrintView('detalle-pesadas');
-        window.print();
-        restoreWebView();
+        printSection('detalle-pesadas');
     }
     
     // 8. FUNCIONES DE VISTA PARA IMPRESIÓN
+
+    // Mostrar solo la sección de impresión indicada y lanzar print con un pequeño delay
+    function printSection(sectionId) {
+        togglePrintView(sectionId);
+
+        // Pequeña espera para que el navegador (sobre todo en mobile) actualice el DOM
+        setTimeout(() => {
+            window.print();
+
+            // Otra pequeña espera para volver a la vista normal
+            setTimeout(() => {
+                restoreWebView();
+            }, 200);
+        }, 200);
+    }
 
     // Mostrar solo la sección de impresión indicada
     function togglePrintView(sectionId) {
@@ -322,3 +334,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Bloque inicial
     createMaterialBlock();
 });
+
