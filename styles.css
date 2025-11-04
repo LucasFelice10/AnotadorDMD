@@ -1,0 +1,375 @@
+/* ================================================= */
+/* PALETA DE COLORES Y ESTILOS BASE */
+/* ================================================= */
+:root {
+    --color-principal: #00796b; /* Verde Esmeralda */
+    --color-acento: #4CAF50;    /* Verde Brillante/Llamativo */
+    --color-fondo: #0A0A0A;     /* Negro muy profundo */
+    --color-contenedor: #1C1C1C;
+    --color-card: #282828;
+    --color-texto: #E0E0E0;
+    --color-error: #d32f2f;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: var(--color-contenedor);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ================================================= */
+/* CABECERA */
+/* ================================================= */
+header { 
+    text-align: center; 
+    padding: 20px 0;
+}
+header h1 {
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--color-acento);
+    text-shadow: 0 0 10px rgba(76, 255, 80, 0.7), 0 0 25px rgba(76, 255, 80, 0.4);
+    margin-bottom: 0;
+}
+header h2 {
+    font-size: 1.2em;
+    color: var(--color-texto);
+    margin-top: 5px;
+}
+
+/* ================================================= */
+/* CAMPOS Y TITULOS */
+/* ================================================= */
+h3, h4 { 
+    color: var(--color-acento); 
+    border-bottom: 2px solid var(--color-principal); 
+    padding-bottom: 5px; 
+}
+
+input[type="text"], input[type="number"], input[type="date"], select {
+    padding: 12px; 
+    border: 1px solid #3A3A3A; 
+    border-radius: 6px; 
+    background-color: #333; 
+    color: var(--color-texto); 
+    width: 100%; 
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+    outline: 2px solid var(--color-acento);
+    border-color: var(--color-acento);
+    box-shadow: 0 0 8px rgba(76, 255, 80, 0.4);
+    background-color: #444;
+}
+
+.datos-iniciales { 
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    align-items: center;
+}
+.datos-iniciales .input-grupo { 
+    flex: 1 1 45%; 
+}
+
+/* ================================================= */
+/* BARRA DE RESUMEN */
+/* ================================================= */
+.resumen-barra {
+    flex: 1 1 100%;
+    padding: 15px;
+    background-color: #333;
+    border-radius: 6px;
+    border-left: 5px solid var(--color-acento);
+}
+.resumen-barra h4 {
+    margin: 0 0 10px 0;
+    color: var(--color-acento);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#resumen-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 1.1em;
+}
+#resumen-contenido span {
+    color: var(--color-texto);
+}
+#resumen-contenido span span {
+    font-weight: bold;
+    color: var(--color-principal);
+    padding-left: 5px;
+}
+
+/* ================================================= */
+/* BOTONES PRINCIPALES */
+/* ================================================= */
+.acciones { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 20px; 
+    flex-wrap: wrap; 
+}
+button { 
+    padding: 14px 20px; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: all 0.2s; 
+    flex-grow: 1; 
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+#btn-agregar-material { background-color: var(--color-principal); color: #fff; }
+.btn-exportar { background-color: var(--color-acento); color: var(--color-fondo); }
+
+/* ================================================= */
+/* SECCIÓN DE MATERIAL (CARD) */
+/* ================================================= */
+.material-seccion { 
+    border: none;
+    padding: 25px; 
+    margin-bottom: 30px; 
+    border-radius: 15px; 
+    background: linear-gradient(145deg, #2c2c2c, #202020); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); 
+    transition: all 0.3s ease;
+}
+.material-seccion:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(76, 255, 80, 0.2);
+    transform: translateY(-2px);
+}
+.material-seccion h4 { 
+    color: var(--color-principal);
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+    margin-top: 15px;
+}
+.acciones-internas {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.material-seccion .acciones-internas button {
+    flex-grow: 0;
+    min-width: unset;
+    padding: 10px 15px;
+    font-size: 0.95em;
+}
+.btn-anadir-pesada { 
+    background-color: #004d40;
+    color: white; 
+}
+
+/* ================================================= */
+/* PESADAS (Peso Bruto) – INPUT GRANDE + BOTÓN X    */
+/* ================================================= */
+
+/* Contenedor de todas las pesadas dentro de un material */
+.pesadas-contenedor { 
+    display: flex; 
+    flex-direction: column;   /* una debajo de otra (más cómodo) */
+    gap: 10px; 
+    margin-top: 15px; 
+}
+
+/* Cada fila: input de peso + botón X */
+.pesada-item { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;              /* ocupa todo el ancho del card */
+    box-sizing: border-box;
+}
+
+/* INPUT de peso: grande y cómodo */
+.pesada-item input { 
+    flex: 1 1 auto;
+    width: 100%;
+    margin-bottom: 0; 
+    padding: 12px 10px;       /* aumenta la altura */
+    font-size: 1.1em;         /* agranda el número */
+    text-align: right;        /* número prolijo a la derecha */
+}
+
+/* BOTÓN X chico a la derecha */
+.pesada-item .btn-quitar {
+    flex: 0 0 42px;           /* ancho fijo */
+    height: 42px;             /* cuadrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-error); 
+    color: white;
+    padding: 0;
+    font-size: 0.95em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ================================================= */
+/* TOTALES */
+/* ================================================= */
+.total-material {
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #383838;
+    border-left: 5px solid var(--color-acento);
+    line-height: 1.6;
+}
+.total-material strong {
+    font-size: 1.3em;
+    color: var(--color-acento);
+}
+.totales-generales { 
+    text-align: center; 
+    padding: 25px; 
+    background-color: var(--color-principal); 
+    border-radius: 8px; 
+    margin-top: 30px; 
+}
+#total-general { 
+    font-size: 2.2em; 
+    color: #fff; 
+}
+
+/* Ocultar las boletas/detalles por defecto */
+.print-only {
+    display: none;
+}
+
+/* ================================================= */
+/* RESPONSIVE (Celulares) */
+/* ================================================= */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    main { margin: 20px auto; padding: 15px; }
+    
+    header h1 { font-size: 2.2em; letter-spacing: 3px; }
+    
+    .datos-iniciales .input-grupo { 
+        flex: 1 1 100%; 
+    }
+    
+    #resumen-contenido {
+        flex-direction: column;
+    }
+
+    .acciones button {
+        flex: 1 1 100%;
+        min-width: unset;
+    }
+
+    /* Pesadas: una por fila en móvil */
+    .pesada-item { 
+        width: 100%;
+        min-width: unset;
+    }
+
+    .pesada-item input {
+        font-size: 1.05em;
+        padding: 10px;
+    }
+
+    #total-general { font-size: 1.5em; }
+}
+
+/* ================================================= */
+/* IMPRESIÓN */
+/* ================================================= */
+@media print {
+    .acciones, footer, .web-only, .datos-iniciales, #contenedor-materiales, .resumen-barra, .btn-quitar, header h2 {
+        display: none !important;
+    }
+    body, main {
+        background: white !important;
+        color: black !important;
+        padding: 0;
+        margin: 0;
+        box-shadow: none !important;
+        font-size: 11pt;
+    }
+    header h1 {
+        font-size: 1.8em !important;
+        color: black !important;
+        text-shadow: none !important;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    .print-only {
+        border: 2px solid #000;
+        padding: 20px;
+        page-break-after: always;
+    }
+    .boleta-titulo, .detalle-titulo {
+        text-align: center;
+        border-bottom: 3px solid #333 !important;
+        color: black !important;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        font-size: 1.3em;
+    }
+    #boleta-datos-cabecera, #detalle-datos-cabecera {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: #f0f0f0;
+    }
+    .totales-generales-pdf {
+        background-color: #333 !important;
+        color: white !important;
+        padding: 15px;
+        font-size: 1.5em;
+        text-align: right;
+        margin-top: 20px;
+    }
+    .totales-generales-pdf strong {
+        color: white !important;
+    }
+    #tabla-resumen, #detalle-contenedor-materiales table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    #tabla-resumen th, #tabla-resumen td, 
+    #detalle-contenedor-materiales th, #detalle-contenedor-materiales td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+        color: black;
+    }
+    #detalle-contenedor-materiales table {
+        width: 50%;
+        margin-bottom: 5px;
+    }
+}

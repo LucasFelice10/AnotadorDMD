@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMD Reciclados - Anotador de Pesadas</title>
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ===================== CABECERA ===================== -->
+    <header>
+        <h1>DMD RECICLADOS</h1>
+        <h2>Anotador de Pesadas de Metales</h2>
+    </header>
+
+    <!-- ===================== CONTENIDO PRINCIPAL ===================== -->
+    <main>
+        <!-- DATOS INICIALES Y RESUMEN -->
+        <section class="datos-iniciales">
+            <div class="input-grupo">
+                <label for="fecha">📅 Fecha:</label>
+                <input type="date" id="fecha">
+            </div>
+            <div class="input-grupo">
+                <label for="cliente">👤 Cliente:</label>
+                <input type="text" id="cliente" placeholder="Nombre del Cliente">
+            </div>
+            <!-- Barra de Resumen Visible en web -->
+            <div id="resumen-datos" class="resumen-barra">
+                <h4>Resumen de la Pesada</h4>
+                <div id="resumen-contenido">
+                    <span id="resumen-cliente">👤 Cliente: <span>N/A</span></span>
+                    <span id="resumen-fecha">📅 Fecha: <span>N/A</span></span>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- ÁREA DINÁMICA DE MATERIALES -->
+        <section id="contenedor-materiales">
+            <!-- Bloques de material insertados por JavaScript -->
+        </section>
+
+        <!-- SECCIÓN DE BOLETA (impresión: RESUMEN) -->
+        <section id="boleta-resumen" class="print-only">
+            <h3 class="boleta-titulo">📄 BOLETA DE PESADAS - DMD RECICLADOS</h3>
+            <div id="boleta-datos-cabecera"></div>
+            <table id="tabla-resumen">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Peso Bruto (kg)</th>
+                        <th>Tara (2kg x Pesada)</th>
+                        <th>Peso Neto (kg)</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="boleta-total-final" class="totales-generales-pdf"></div>
+        </section>
+
+        <!-- SECCIÓN DE DETALLE DE PESADAS (impresión: DETALLE) -->
+        <section id="detalle-pesadas" class="print-only">
+            <h3 class="detalle-titulo">📄 DETALLE COMPLETO DE PESADAS</h3>
+            <div id="detalle-datos-cabecera"></div>
+            <div id="detalle-contenedor-materiales"></div>
+            <div id="detalle-total-final" class="totales-generales-pdf"></div>
+        </section>
+
+        <!-- BOTONES DE ACCIÓN -->
+        <div class="acciones">
+            <button id="btn-agregar-material">➕ Agregar Nuevo Material</button>
+            <button id="btn-imprimir-boleta" class="btn-exportar">🖨️ Boleta Resumen</button>
+            <button id="btn-imprimir-detalle" class="btn-exportar detalle">📄 Imprimir Detalle</button>
+        </div>
+
+        <hr>
+
+        <!-- TOTAL GENERAL WEB -->
+        <section class="totales-generales web-only">
+            <h3>⚖️ Resumen Total Web</h3>
+            <div id="total-general">Total Neto Global: <strong>0.00 kg</strong></div>
+        </section>
+    </main>
+
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer>
+        <p>&copy; DMD Reciclados</p>
+    </footer>
+
+    <!-- JS externo -->
+    <script src="app.js"></script>
+</body>
+</html>
