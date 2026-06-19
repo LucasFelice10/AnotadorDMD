@@ -1,0 +1,186 @@
+/* Estilos de impresión — boleta y detalle */
+
+.print-doc {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  body.printing--summary .app,
+  body.printing--detail .app,
+  body.printing--summary #toast-root,
+  body.printing--detail #toast-root,
+  body.printing--summary #modal-root,
+  body.printing--detail #modal-root {
+    display: none !important;
+  }
+
+  body.printing--summary #print-root,
+  body.printing--detail #print-root {
+    display: block !important;
+  }
+
+  body.printing--summary .print-doc--summary {
+    display: block !important;
+  }
+
+  body.printing--detail .print-doc--detail {
+    display: block !important;
+  }
+
+  body.printing--summary .print-doc--detail,
+  body.printing--detail .print-doc--summary {
+    display: none !important;
+  }
+
+  .print-doc {
+    color: #000;
+    background: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .print-doc__header {
+    text-align: center;
+    margin-bottom: 16pt;
+    padding-bottom: 12pt;
+    border-bottom: 2pt solid #1b6b52;
+  }
+
+  .print-doc__company {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #555;
+    margin-bottom: 4pt;
+  }
+
+  .print-doc__title {
+    font-size: 16pt;
+    font-weight: 700;
+    margin: 0;
+    color: #000;
+  }
+
+  .print-doc__meta {
+    margin-top: 12pt;
+    text-align: left;
+    font-size: 10pt;
+  }
+
+  .print-doc__meta p {
+    margin: 3pt 0;
+  }
+
+  .print-doc__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  .print-doc__table th,
+  .print-doc__table td {
+    border: 1pt solid #ccc;
+    padding: 6pt 8pt;
+    text-align: left;
+    font-size: 10pt;
+  }
+
+  .print-doc__table th {
+    background: #f0f0f0;
+    font-weight: 600;
+  }
+
+  .print-doc__table--detail {
+    width: 60%;
+    max-width: 300pt;
+  }
+
+  .print-doc__material-block {
+    margin-bottom: 16pt;
+    page-break-inside: avoid;
+  }
+
+  .print-doc__material-title {
+    font-size: 12pt;
+    font-weight: 600;
+    margin: 12pt 0 6pt;
+    color: #1b6b52;
+  }
+
+  .print-doc__material-totals {
+    font-size: 10pt;
+    text-align: right;
+    margin-top: 6pt;
+  }
+
+  .print-doc__material-totals p {
+    margin: 2pt 0;
+  }
+
+  .print-doc__material-net {
+    font-weight: 700;
+    margin-top: 4pt !important;
+  }
+
+  .print-doc__total {
+    margin-top: 16pt;
+    padding: 12pt;
+    background: #f5f5f5;
+    border: 1pt solid #ccc;
+    text-align: right;
+    page-break-inside: avoid;
+  }
+
+  .print-doc__total-label {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    margin-bottom: 4pt;
+  }
+
+  .print-doc__total-value {
+    font-size: 18pt;
+    font-weight: 700;
+    color: #1b6b52;
+    margin: 0;
+  }
+
+  .print-doc__signature {
+    margin-top: 32pt;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .print-doc__signature-line {
+    width: 200pt;
+    height: 1pt;
+    background: #000;
+    margin: 0 auto 6pt;
+  }
+
+  .print-doc__signature p {
+    font-size: 9pt;
+    color: #555;
+  }
+
+  .print-doc__footer {
+    margin-top: 20pt;
+    padding-top: 8pt;
+    border-top: 1pt solid #ddd;
+    font-size: 8pt;
+    color: #777;
+    text-align: center;
+  }
+
+  .print-doc__footer p {
+    margin: 2pt 0;
+  }
+}
